@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 14, 2016, 11:51:41 AM
+    Author     : alan
+*/
+
+body {
+    background-color: #EEEEEE;
+}
+
+.display, .control {
+    margin: 10px;
+}
+
+.display {
+    float: left;
+}
+
+.control {
+    float: left;
+}
+
+.control textarea {
+    margin: 10px;
+}
+
+svg {
+    border: 5px solid black;
+}
+
+.dirtFloor {
+    fill: #cc9966;
+}
+
+.trap {
+    fill: #CC3300;
+}
+
+.rock {
+    fill: #000000;
+    fill-opacity: 0.1;
+}
+
+.ladderUp {
+    fill: #ffffff;
+}
+
+.ladderDown {
+    fill: #ffffff;
+}
+
+.firePit {
+    fill: #ff6600;
+}
+
+.chest {
+    fill: #ffcc00;
+}
+
+.bearTrap {
+    fill: #009900;
+}
+
+.beerTrap {
+    fill: #bf4040;
+}
+
+.snare {
+    fill: #ffccff;
+}
+
+.troll {
+    fill: #85adad;
+}
+
+.lizard {
+    fill: #ff66ff;
+}
+
+.dragon {
+    fill: #ff0000;
+}
+
+.gridCharacter {
+    fill: #000000;
+    font-family: monospace;
+}
+
+#displayASCII {
+    letter-spacing: .2em;
+}
+
+@media screen and (max-width: 985px) {
+    .results {
+        margin-top: 50px;
+    }
+}

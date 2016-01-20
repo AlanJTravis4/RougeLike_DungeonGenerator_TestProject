@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>WillowTree Rougelike Dungeon Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <link rel='stylesheet prefetch' href='css/master.css'>
+    </head>
+    <body>
+        <div id="container-fluid">
+            <div class='col-md-12'>
+                <h2>WillowTree Rougelike Dungeon Generator</h2>
+                The following example generates a random dungeon similar to those found in Rougelike games.  
+                <br><br>The dungeon generated is very much simplified from what you would find with a full Rougelike game.  The intent
+                <br>however is a proof of concept, and scalable foundation.  As such the main dungeon environmental tile types are 
+                limited to the following:
+                <ul>
+                    <li>rock "#"</li>
+                    <li>dirt floor "."</li>
+                </ul>
+                There are some additional items and enemies that can be encountered within the dungeon.  
+                <br>These include the following:
+                <ul>
+                    <li>Items:
+                        <ul>
+                            <li>stairs/ladder up "&gt;"</li>
+                            <li>stairs/ladder down "&lt;"</li>
+                            <li>treasure chests "$"</li>
+                            <li>Traps:
+                                <ul>
+                                    <li>FirePits "f"</li>
+                                    <li>BearPits "b"</li>
+                                    <li>BeerPits "r"</li>
+                                    <li>Snare "s"</li>
+                                </ul>
+                        </ul>
+                    </li>
+                    <li>Enemies:
+                        <ul>
+                            <li>lizard "~"</li>
+                            <li>troll "%"</li>
+                            <li>dragon "D"</li>                        
+                        </ul>
+                    </li>
+                </ul>
+
+                What's presented is a SVG image representing a 2D array of tiles.  SVG was chosen for this example because it allows:
+                <br> - Clean presentation of the dungeon
+                <br> - A foundation which could also support User/AI interaction to play the game
+                <br><br>By default a dungeon with width/height dimensions of 800x600 and tiles sized at 15x15 will be generated.  
+                <br>*Note* for cases where the dungeon dimension is not evenly divisable by the tile dimension, the number of 
+                <br>possible tiles for that dimension is calculated by simple integer division which truncates any decimals.
+                <br>ex) 800 / 15 == 53 possible tiles wide for the dungeon.
+                <br><br>If desired you can change the default width/height of the generated dungeon as well as the size of individual tiles.
+                <br>Once satisfied with the input parameters, click the the button "Generate Random Dungeon".     
+            </div>
+            <div id="content" class=row">
+                <div class="col-md-3">    
+                    <h4>
+                        Dungeon width
+                        <input type="text" class="form-control" id="svgWidth" placeholder="800">
+                    </h4>
+                </div>
+                <div class="col-md-3">    
+                    <h4>
+                        Dungeon height
+                        <input type="text" class="form-control" id="svgHeight" placeholder="600">
+                    </h4>
+                </div>
+                <div class="col-md-3">    
+                    <h4>
+                        Tile width/height
+                        <input type="text" class="form-control" id="tileWidth" placeholder="15">
+                    </h4>
+                </div>
+                <div class="col-md-3">    
+                    <h4>
+                        Max Percentage of dirt
+                        <input type="text" class="form-control" id="dirtPercent" placeholder="66" disabled>
+                    </h4>
+                </div>
+            </div>
+            <div class='col-md-12'>
+                <h4>
+                    <button id="submit">Generate Random Dungeon</button>
+                </h4>
+                <div id="errorMessage">
+                </div>
+                <div id="displaySVG">
+                </div>
+                <div id="displayASCII">
+                </div>
+            </div>
+        </div>
+
+        <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+        <script src="js/Helpers.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/Dungeon.js"></script>
+        <script src="js/tiles/Tile.js"></script>
+        <script src="js/tiles/EnvironmentTiles.js"></script>
+        <script src="js/tiles/ItemTiles.js"></script>
+        <script src="js/tiles/TrapItems.js"></script>
+        <script src="js/tiles/EnemyTiles.js"></script>
+        <script src="js/generators/DungeonGenerator.js"></script>
+        <script src="js/generators/ItemGenerator.js"></script>
+        <script src="js/generators/EnemyGenerator.js"></script>
+    </body>
+</html>
